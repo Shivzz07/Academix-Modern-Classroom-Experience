@@ -1,6 +1,6 @@
 import React from "react";
 
-import back2 from "../../../assets/wallpapers/back2.png";
+import back2 from "../../../assets/wallpapers/back2.PNG";
 import back3 from "../../../assets/wallpapers/back3.jpg";
 import back4 from "../../../assets/wallpapers/back4.jpg";
 import back5 from "../../../assets/wallpapers/back5.jpg";

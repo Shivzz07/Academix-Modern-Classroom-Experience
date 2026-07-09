@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from 'react'
 import Jan from '../../assets/Jan.png'
 import cross from '../../assets/cross.svg'
-import back2 from '../../assets/back2.png'
+import back2 from '../../assets/back2.PNG'
 import Janu from '../../assets/Janu.png'
 import Feb from '../../assets/Feb.png'
 import Mar from '../../assets/Mar.png'
