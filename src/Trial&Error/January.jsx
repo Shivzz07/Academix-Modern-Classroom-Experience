@@ -16,7 +16,7 @@ import Nov from '../../assets/Nov.png'
 import Dec from '../../assets/Dec.png'
 
 
-import Wall from '../../assets/Wall.png'
+import Wall from '../../assets/wall.png'
 import Clock from '../../assets/Clock.png'
 import back3 from '../../assets/back3.jpg'
 import back4 from '../../assets/back4.jpg'

@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import Wall from "../../../../assets/logos/Wall.png";
+import Wall from "../../../../assets/logos/wall.png";
 import clapper from "../../../../assets/logos/clapper.png";
 import Janu from "../../../../assets/month_gfx/Janu.png"; 
 import Feb from "../../../../assets/month_gfx/Feb.png";
