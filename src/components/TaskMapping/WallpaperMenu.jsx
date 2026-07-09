@@ -1,5 +1,5 @@
 import React from 'react'
-import Wall from '../../assets/logos/Wall.png'
+import Wall from '../../assets/logos/wall.png'
 import back2 from '../../assets/wallpapers/back2.png'
 import back3 from '../../assets/wallpapers/back3.jpg'
 import back4 from '../../assets/wallpapers/back4.jpg'
