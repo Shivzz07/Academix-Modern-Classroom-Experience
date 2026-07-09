@@ -1,5 +1,5 @@
 import React from "react";
-import Wall from "../../assets/logos/Wall.png";
+import Wall from "../../assets/logos/wall.png";
 import draw from "../../assets/logos/draw1.png"
 import Janu from "../../assets/month_gfx/Janu.png";
 import Feb from "../../assets/month_gfx/Feb.png";
