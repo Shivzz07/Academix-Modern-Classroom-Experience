@@ -18,7 +18,7 @@ import { signInWithEmailAndPassword } from "firebase/auth";
 import React from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { AuthProvider } from "./context/AuthContext.jsx";
-import Book from "../../acad/src/components/Blog/Book.jsx";
+import Book from "./components/Blog/Book.jsx";
 import Leaderboards from "./components/Leaderboards/Leaderboards.jsx";
 import ProtectedRoute from "./components/ProtectedRoute";
 
