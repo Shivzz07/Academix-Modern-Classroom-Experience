@@ -4,7 +4,7 @@ import Calendar from "../Calendar_admin.jsx";
 import WallpaperMenu_admin from "../WallpaperMenu_Admin.jsx";
 import LiveClock from "../../../../components/TaskMapping/LiveClock.jsx";
 import AllQuestsbar from "../../../../components/TaskMapping/AllQuestsbar.jsx";
-import back2 from "../../../../assets/wallpapers/back2.png";
+import back2 from "../../../../assets/wallpapers/back2.PNG";
 
 const TaskMapping2_admin = ({ newscontent }) => {
   const [selectMonth, setSelectedMonth] = useState(null);
