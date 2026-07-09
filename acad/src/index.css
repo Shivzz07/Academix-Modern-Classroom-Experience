@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Boldonse&family=Lilita+One&display=swap');
+@import "tailwindcss";
+
+
+body {
+  cursor : url(./assets/cursor.png);
+  
+}
+
+@font-face {
+  font-family: "Playpen";
+  src: url("../Playpen_Sans/static/PlaypenSans-Medium.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ChangeOne";
+  src: url("../Changa_One/ChangaOne-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Anton";
+  src: url("./Anton-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Comp";
+  src: url("../public/CompressaPRO-GX.woff2") format("woff2");
+  font-weight:50;
+  font-style:normal;
+}
+
+@font-face {
+  font-family: "Stalinist";
+  src: url("../Nabla-Regular-VariableFont_EDPT\,EHLT.ttf") format("truetype");
+  font-weight:normal;
+  font-style:normal;
+}
+
+.bold {
+  font-family: "Boldonse", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.comp {
+  font-family: "CompressaPRO-GX",sans-serif;
+  
+}
+
+.stal{
+  font-family: "Stalinist",sans-serif;
+  
+}
+
+.play{
+  font-family: "Playpen",sans-serif;
+  
+}
+
+.change {
+  font-family: "ChangeOne",sans-serif;
+}
+
+.text{
+
+    font-family: "Anton",sans-serif;
+}
+
+:root {
+    background-image: url(https://i.pinimg.com/736x/37/9e/f4/379ef47d4a7d257ed3a8ab59007a94ee.jpg);
+    background-color: rgb(251, 249, 136);
+    background-blend-mode:overlay;
+     --breakpoint-laptop :1440px;
+    
+}
+
+.slick-slide > div {
+  margin: 0 10px;
+}
