@@ -4,24 +4,19 @@ import { ReactSketchCanvas } from "react-sketch-canvas";
 
 
 
-const PRESET_BACKGROUNDS = [
-  { label: 'Transparent', value: 'transparent', pattern: true },
-  { label: 'White',       value: '#ffffff',     pattern: false },
-  { label: 'Black',       value: '#000000',     pattern: false },
-  { label: 'Navy',        value: '#0f172a',     pattern: false },
-];
-
 const STROKE_SIZES = [2, 5, 10, 18];
 const ERASER_SIZES = [8, 16, 28, 44];
 
 const Drawing = ({ setremove, closewin, wallpaper }) => {
   const canvasRef     = useRef(null);
   const colorInputRef = useRef(null);
+  const bgColorInputRef = useRef(null);
   const overlayRef = useRef(null)
 
 
   const [strokeColor, setStrokeColor] = useState('#ffffff');
   const [canvasColor, setCanvasColor] = useState('transparent');
+  const [lastSolidBg, setLastSolidBg] = useState('#ffffff'); // remembers last custom bg picked
   const [strokeWidth, setStrokeWidth] = useState(5);
   const [eraserWidth, setEraserWidth] = useState(16);
   const [eraseMode,   setEraseMode]   = useState(false);
@@ -36,16 +31,13 @@ const Drawing = ({ setremove, closewin, wallpaper }) => {
     canvasRef.current?.eraseMode(true);
   };
 
-  
-//  console.log(typeof(wallpaper))
-  //   const handleSave = async () => {
-  //   const dataUrl = await canvasRef.current?.exportImage('png');
-  //   if (!dataUrl) return;
-  //   const a = document.createElement('a');
-  //   a.href     = dataUrl;
-  //   a.download = 'drawing.png';
-  //   a.click();
-  // };
+  const handleUndo = () => {
+    canvasRef.current?.undo();
+  };
+  const handleRedo = () => {
+    canvasRef.current?.redo();
+  };
+
 const handleSave = async () => {
   // Export the user's drawing — transparent where nothing was drawn
   const drawingDataUrl = await canvasRef.current?.exportImage('png');
@@ -117,32 +109,52 @@ const handleSave = async () => {
   
       <div className='absolute top-3 left-1/2 -translate-x-1/2 z-[10000] flex items-center gap-2.5'>
 
-      
+        {/* BACKGROUND: Transparent toggle + free-choice color wheel */}
         <div className={pill}>
-          {PRESET_BACKGROUNDS.map((bg) => (
-            <button
-              key={bg.value}
-              title={bg.label}
-              onClick={() => setCanvasColor(bg.value)}
-              className='rounded-full transition-transform hover:scale-110 focus:outline-none flex-shrink-0 relative overflow-hidden'
-              style={{
-                width:  canvasColor === bg.value ? 22 : 18,
-                height: canvasColor === bg.value ? 22 : 18,
-                backgroundColor: bg.pattern ? undefined : bg.value,
-                border: canvasColor === bg.value
-                  ? '2.5px solid #374151'
-                  : '1.5px solid rgba(0,0,0,0.2)',
-                backgroundImage: bg.pattern
-                  ? 'linear-gradient(45deg,#aaa 25%,transparent 25%),' +
-                    'linear-gradient(-45deg,#aaa 25%,transparent 25%),' +
-                    'linear-gradient(45deg,transparent 75%,#aaa 75%),' +
-                    'linear-gradient(-45deg,transparent 75%,#aaa 75%)'
-                  : undefined,
-                backgroundSize:     bg.pattern ? '6px 6px'                    : undefined,
-                backgroundPosition: bg.pattern ? '0 0,0 3px,3px -3px,-3px 0' : undefined,
+          <button
+            title="Transparent background"
+            onClick={() => setCanvasColor('transparent')}
+            className='rounded-full transition-transform hover:scale-110 focus:outline-none flex-shrink-0 relative overflow-hidden'
+            style={{
+              width:  canvasColor === 'transparent' ? 22 : 18,
+              height: canvasColor === 'transparent' ? 22 : 18,
+              border: canvasColor === 'transparent'
+                ? '2.5px solid #374151'
+                : '1.5px solid rgba(0,0,0,0.2)',
+              backgroundImage:
+                'linear-gradient(45deg,#aaa 25%,transparent 25%),' +
+                'linear-gradient(-45deg,#aaa 25%,transparent 25%),' +
+                'linear-gradient(45deg,transparent 75%,#aaa 75%),' +
+                'linear-gradient(-45deg,transparent 75%,#aaa 75%)',
+              backgroundSize:     '6px 6px',
+              backgroundPosition: '0 0,0 3px,3px -3px,-3px 0',
+            }}
+          />
+
+          <button
+            title="Choose background colour"
+            onClick={() => bgColorInputRef.current?.click()}
+            className='relative rounded-full overflow-hidden hover:scale-110 transition-transform focus:outline-none flex-shrink-0'
+            style={{
+              width: canvasColor !== 'transparent' ? 22 : 18,
+              height: canvasColor !== 'transparent' ? 22 : 18,
+              background: 'conic-gradient(#ef4444,#f97316,#eab308,#22c55e,#3b82f6,#a855f7,#ec4899,#ef4444)',
+              border: canvasColor !== 'transparent'
+                ? '2.5px solid #374151'
+                : '1.5px solid rgba(0,0,0,0.2)',
+            }}
+          >
+            <input
+              ref={bgColorInputRef}
+              type="color"
+              value={lastSolidBg}
+              onChange={(e) => {
+                setLastSolidBg(e.target.value);
+                setCanvasColor(e.target.value);
               }}
+              className='absolute inset-0 opacity-0 cursor-pointer w-full h-full'
             />
-          ))}
+          </button>
         </div>
 
         <Divider />
@@ -188,6 +200,28 @@ const handleSave = async () => {
               <path d="m7 21-4.3-4.3c-1-1-1-2.5 0-3.4l9.6-9.6c1-1 2.5-1 3.4 0l5.6 5.6c1 1 1 2.5 0 3.4L13 21"/>
               <path d="M22 21H7"/>
               <path d="m5 11 9 9"/>
+            </svg>
+          </button>
+        </div>
+
+        <Divider />
+
+        {/* UNDO / REDO */}
+        <div className={pill}>
+          <button title="Undo" onClick={handleUndo} className={iconBtn(false)}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" strokeWidth="2" strokeLinecap="round"
+              strokeLinejoin="round" className="w-[15px] h-[15px]">
+              <path d="M9 14 4 9l5-5"/>
+              <path d="M4 9h10.5a5.5 5.5 0 0 1 5.5 5.5v0a5.5 5.5 0 0 1-5.5 5.5H11"/>
+            </svg>
+          </button>
+          <button title="Redo" onClick={handleRedo} className={iconBtn(false)}>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+              stroke="currentColor" strokeWidth="2" strokeLinecap="round"
+              strokeLinejoin="round" className="w-[15px] h-[15px]">
+              <path d="m15 14 5-5-5-5"/>
+              <path d="M20 9H9.5A5.5 5.5 0 0 0 4 14.5v0A5.5 5.5 0 0 0 9.5 20H13"/>
             </svg>
           </button>
         </div>

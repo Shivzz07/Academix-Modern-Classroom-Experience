@@ -45,7 +45,6 @@ const TaskDialog = ({ close_Win, day, month, year, ran_color, col, submit, setsu
   const hasTask = task4thisday.length > 0;
   const existingTask = task4thisday[0];
 
-  // -- date calculation, same as PC --
   function isLeapYear(year) {
     return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
   }
@@ -94,7 +93,7 @@ const TaskDialog = ({ close_Win, day, month, year, ran_color, col, submit, setsu
 
   return (
     <>
-      <div className="play border-1 cursor-pointer bg-white z-99 absolute md:left-1/4 top-1/4 left-[10%] mx-auto rounded-xl ">
+      <div className="play border cursor-pointer bg-white z-99 absolute md:left-1/4 top-1/4 left-[10%] mx-auto rounded-xl ">
         <div className="flex flex-col gap-4 w-full">
           <div className="flex justify-between rounded-t-xl" style={{ backgroundColor: ran_color }}>
             <h1 className="lg:px-5 lg:text-white px-2 play">
@@ -166,7 +165,7 @@ const TaskDialog = ({ close_Win, day, month, year, ran_color, col, submit, setsu
           <div className="flex justify-center items-center pb-4">
             {!hasTask && submit && (
               <button
-                className="px-4 rounded-xl text-white border-0 hover:border-black hover:border-1 hover:cursor-pointer"
+                className="px-4 rounded-xl text-white border-0 hover:border-black hover:border hover:cursor-pointer"
                 style={{ backgroundColor: ran_color }}
                 onClick={handlesubmit}
               >

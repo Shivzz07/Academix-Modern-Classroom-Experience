@@ -8,7 +8,6 @@ import { signInWithEmailAndPassword, signOut } from "firebase/auth";
 import { doc, getDoc } from "firebase/firestore";
 import { setPersistence, browserSessionPersistence } from "firebase/auth";
 import { TasksContext } from "../TaskList/AllTasks";
-// Add updateDoc to your existing firestore import
 import { updateDoc } from "firebase/firestore";
 
 const Login = () => {
@@ -17,38 +16,6 @@ const Login = () => {
   const [pass, setPass] = useState("");
   const [wait, setwait] = useState(true);
   const navigate = useNavigate();
-
-  // const SubmitForm = async (e) => 
-  //   {
-  //     setwait(false)
-  //   e.preventDefault();
-  //   try {
-  //     await setPersistence(auth, browserSessionPersistence);
-  //     const credential = await signInWithEmailAndPassword(auth, email, pass);
-  //     const docRef = doc(db, "Users", credential.user.uid);
-  //     const docSnap = await getDoc(docRef);
-
-  //     if (docSnap.exists()) {
-  //       const role = docSnap.data().role;
-
-        
-  //       toast.success("Logged in successfully!", 
-  //         { 
-  //           position: "top-center" 
-  //         });
-  //          await updateDoc(docRef, { login: true });
-  //         navigate(role === "admin" ? "/login/admin" : "/login/employee");
-       
-        
-        
-  //     }
-  //   } 
-  //   catch (error) 
-  //   {
-  //      setwait(true)
-  //     toast.error(error.message, { position: "top-center" });
-  //   }
-  // };
 const SubmitForm = async (e) => {
   setwait(false);
   e.preventDefault();

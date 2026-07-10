@@ -56,7 +56,7 @@ export const TasksProvider = ({ children }) => {
     }
   };
 
-  // Merge admin task content with user's personal status for that task
+  
   const merged_tasks = task_stat.map(adminTask => {
     const userState = user_task_states.find(ut => ut.id === adminTask.id);
     return {
@@ -65,7 +65,7 @@ export const TasksProvider = ({ children }) => {
     };
   });
 
-  // Call this on Accept / Reject / Complete
+  
   const updateTaskStatus = async (adminTaskId, newStatus, auraChange = 0) => {
     try {
       const taskRef = doc(db, "Users", user.uid, "tasks", adminTaskId);
@@ -146,15 +146,15 @@ const fetchData = async () => {
     return;
   }
 
-  const userDocRef = doc(db, "Users", user.uid); // refers to user doc
+  const userDocRef = doc(db, "Users", user.uid);
   
   try {
-    const userDoc = await getDoc(userDocRef); // fetch the single document
+    const userDoc = await getDoc(userDocRef); 
     
     if (userDoc.exists()) 
       {
       
-        // console.log("User data:", userDoc.data());
+       
         setaccept(userDoc.data().accepted)
         setcomplete(userDoc.data().completed)
         setreject(userDoc.data().failed)

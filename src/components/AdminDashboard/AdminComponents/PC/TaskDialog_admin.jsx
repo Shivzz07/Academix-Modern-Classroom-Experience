@@ -54,11 +54,15 @@ const TaskDialog = ({
   let tasks = task_stat;
 
   const task4thisday = tasks.filter(assignTasks);
+  console.log(task4thisday);
 
   const [duration, setduration] = useState(0);
+  console.log("duration:", duration);
   const { user } = useContext(AuthContext);
   const db = getFirestore();
   const adminUID = user.uid;
+
+  console.log(month);
 
   function isLeapYear(year) {
     return (year % 4 === 0 && year % 100 !== 0) || year % 400 === 0;
@@ -107,6 +111,8 @@ const TaskDialog = ({
     return `${y}-${mm}-${dd}`;
   }
   const deadline_date = addDaysToDate(year, month, day, duration);
+
+  console.log(deadline_date);
 
   const paneRef = useRef(null);
   const titleRef = useRef(null);
@@ -161,8 +167,13 @@ const TaskDialog = ({
   }, []);
 
   async function handlesubmit() {
+    console.log("I am getting executed");
     close_Win();
     setsubmit(false);
+
+    console.log("Saving with date:", format_date);
+    console.log("Saving with deadline:", deadline_date);
+    console.log("month value:", month);
 
     const newTask = {
       title: title,
@@ -176,11 +187,13 @@ const TaskDialog = ({
     const questsRef = collection(db, "Users", adminUID, "tasks");
 
     try {
-      const docRef = await addDoc(questsRef, newTask);
+      const docRef = await addDoc(questsRef, newTask); // ← await added
+      console.log("Saved to Firebase with ID:", docRef.id);
 
       // Only show in UI after confirmed saved
       addTaskOptimistic({ ...newTask, id: docRef.id });
     } catch (err) {
+      console.log("Firebase error:", err);
       alert("Failed to save task: " + err.message);
     }
   }
@@ -192,7 +205,7 @@ const TaskDialog = ({
     <>
       <div
         ref={paneRef}
-        className={`play border-1  bg-white z-99 absolute xl:top-[60%] xl:left-[50%] xl:w-100 translate-[-50%] lg:top-[50%] lg:left-[50%] rounded-xl  flex`}
+        className={`play border  bg-white z-99 absolute xl:top-[60%] xl:left-[50%] xl:w-100 translate-[-50%] lg:top-[50%] lg:left-[50%] rounded-xl  flex`}
       >
         <div className="flex flex-col gap-4 w-full ">
           <div
@@ -279,7 +292,7 @@ const TaskDialog = ({
           <div className="flex justify-center items-center pb-4">
             {!hasTask && submit && (
               <button
-                className="px-4 rounded-xl text-white border-0 hover:border-black hover:border-1 hover:cursor-pointer"
+                className="px-4 rounded-xl text-white border-0 hover:border-black hover:border hover:cursor-pointer"
                 style={{ backgroundColor: ran_color }}
                 onClick={handlesubmit}
               >

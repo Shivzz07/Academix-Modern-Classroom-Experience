@@ -148,7 +148,7 @@ const Register = ({ setUser, setfirstName, setlastName, setuserName }) => {
                 <div className="relative w-full flex flex-col">
                   <div
                     onClick={() => setOpen(!open)}
-                    className="dropdown cursor-pointer w-full flex border-b-1   text-black duration-200 px-3"
+                    className="dropdown cursor-pointer w-full flex border-b   text-black duration-200 px-3"
                     style={{ borderColor: auradialogbordercolor }}
                   >
                     {selected == "Choose your Emote :" ? (
@@ -218,12 +218,12 @@ const Register = ({ setUser, setfirstName, setlastName, setuserName }) => {
                   </div>
 
                   {open && (
-                    <div className="absolute right-1/10 top-2/3 text-gray-500 border-1 bg-gray-100 mt-1  shadow-lg">
+                    <div className="absolute right-1/10 top-2/3 text-gray-500 border bg-gray-100 mt-1  shadow-lg">
                       {options.map((option) => (
                         <div
                           key={option.name}
                           onClick={() => handleSelect(option)}
-                          className="p-3 border-1 border-gray-300 cursor-pointer hover:bg-blue-200 hover:text-white"
+                          className="p-3 border border-gray-300 cursor-pointer hover:bg-blue-200 hover:text-white"
                         >
                           <h1>{option.name}</h1>
                         </div>
@@ -233,7 +233,7 @@ const Register = ({ setUser, setfirstName, setlastName, setuserName }) => {
                 </div>
                 <div className="w-full flex flex-col  ">
                   <h1
-                    className=" text-black  w-full flex  items-center border-b-1   pt-2 px-4 e text-capitalize"
+                    className=" text-black  w-full flex  items-center border-b   pt-2 px-4 e text-capitalize"
                     style={{ borderColor: auradialogbordercolor }}
                   >
                     Aura : {aura_count}

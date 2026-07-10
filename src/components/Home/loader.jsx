@@ -85,7 +85,7 @@ const Loader = () => {
       `}</style>
 
       <div
-        className="fixed w-full h-full z-[999] flex items-center justify-center bg-[#F7F7F7] transition-all duration-[800ms] ease-in-out"
+        className="fixed w-full h-full z-999 flex items-center justify-center bg-[#F7F7F7] transition-all duration-[800ms] ease-in-out"
         style={{
           top: slideOut ? "-100%" : "0",
           animation: show ? "bgChange 12s ease forwards" : "none",

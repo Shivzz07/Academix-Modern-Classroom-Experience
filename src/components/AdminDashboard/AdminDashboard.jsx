@@ -1,10 +1,7 @@
 import React, { useContext, useState } from 'react'
 import TaskMapping2_admin from './AdminComponents/PC/TaskMapping2_admin'
 import TaskMappingMobile_admin from './AdminComponents/Mobile/TaskMappingMobile_admin'
-// import Chatting from '../../Trial&Error/Chatting.jsx'
 import ChattingTest2 from './ChattingTest2.jsx'
-// import Testchat from './AdminComponents/testchat.jsx'
-// import Geminichat from './AdminComponents/Geminichat.jsx'
 import { TasksContext } from '../TaskList/AllTasks.jsx'
 import { AuthContext } from '../../context/AuthContext.jsx'
 

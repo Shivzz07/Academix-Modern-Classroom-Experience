@@ -1,6 +1,6 @@
 import { Link,useNavigate } from "react-router-dom";
 import { useContext, useRef, useState, useEffect } from "react";
-// import { userContext } from "./Auth/Login";
+
 import Counter from "./Counter.jsx";
 import { useTheme } from "../context/ThemeContext.jsx";
 import gsap from "gsap";
