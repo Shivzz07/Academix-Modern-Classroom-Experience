@@ -3,13 +3,14 @@ dotenv.config({ path: '.env.local' });
 
 
 export default async function handler(req, res) {
+
   // Only allow POST requests -- anything else gets rejected
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
   }
 
   const OPENAI_KEY = process.env.OPENAI_API_KEY;
-  console.log("Key exists:", !!OPENAI_KEY, "length:", OPENAI_KEY?.length);
+
 
   try {
     // Step 1: Get a random funny news story

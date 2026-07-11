@@ -246,7 +246,7 @@ onClick={() => {
                          style={{  borderColor : auradialogbordercolor}}
                       />
                     </div>
-                    <div className="flex flex-col justify-center items-center py-4 gap-4 text-black dark:grayscale">
+                    <div className="flex flex-col justify-center items-center py-4 gap-4 text-black">
                       <div className="flex justify-center items-center play text-white">
                         {task_name === "Accept" ? 
                          (
@@ -264,7 +264,7 @@ onClick={() => {
   onClick={accept_increment}
   className="relative overflow-hidden bg-yellow-500 hover:bg-yellow-400 px-4 py-2 rounded-lg hover:scale-95 duration-300 cursor-pointer text-black font-semibold"
 >
-  <span className="relative z-10 text-white">Collect</span>
+  <span className="relative z-10 text-white ">Collect</span>
 
   <span className="absolute inset-0 overflow-hidden rounded-lg">
     <span className="absolute top-0 -left-20 h-full w-10 bg-gradient-to-r from-transparent via-yellow-200/90 to-transparent animate-shine"></span>

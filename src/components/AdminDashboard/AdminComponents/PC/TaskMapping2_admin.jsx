@@ -2,7 +2,7 @@ import { React, useState, memo, Component, useContext, useEffect } from "react";
 import MonthSelector from "./MonthSelector_admin.jsx";
 import Calendar from "../Calendar_admin.jsx";
 import WallpaperMenu_admin from "../WallpaperMenu_Admin.jsx";
-import LiveClock from "../../../../components/TaskMapping/LiveClock.jsx";
+import LiveClock from "../LiveClock_admin.jsx";
 import AllQuestsbar from "../../../../components/TaskMapping/AllQuestsbar.jsx";
 import back2 from "../../../../assets/wallpapers/back2.PNG";
 

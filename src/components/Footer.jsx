@@ -21,12 +21,9 @@ function Footer() {
             </div>
             <div className='rounded-full duration-700  '>
                  <a href="https://github.com/Shivzz07/" target='_blank' className=' text-white'>
-                 <img src="https://img.icons8.com/fluent-systems-filled/512/40C057/github.png" alt=""  className='md:w-25 md:h-25 sm:w-10 sm:h-10 w-10 h-10'/></a>
+                 <img src="https://img.icons8.com/fluent-systems-filled/512/40C057/github.png" alt=""  className='md:w-20 md:h-20 sm:w-10 sm:h-10 w-10 h-10'/></a>
             </div>
-            <div className=' rounded-full duration-700 '>
-                 <a href="https://www.instagram.com/mt_shivam7/" target='_blank' className=''>
-                 <img src="https://cdn2.iconfinder.com/data/icons/2018-social-media-app-logos/1000/2018_social_media_popular_app_logo_instagram-512.png" alt="" className='rounded-full md:w-20 md:h-20 sm:w-10 sm:h-10 w-10 h-10'/></a>
-            </div>
+            
             <div className='rounded-full  duration-700 '>
                  <a href="https://x.com/crZzay_guy" target='_blank' className=' text-white '>
                  <img src="https://images.icon-icons.com/4029/PNG/512/twitter_x_new_logo_x_rounded_icon_256078.png" alt="" className='md:w-30 md:h-20 sm:w-25 sm:h-20 w-15 h-10'/></a>
