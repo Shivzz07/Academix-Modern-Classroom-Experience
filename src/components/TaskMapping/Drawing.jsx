@@ -107,7 +107,7 @@ const handleSave = async () => {
     <div ref={overlayRef} className='w-full h-full absolute z-[9999]'> {/* ← ref added */}
 
   
-      <div className='absolute top-3 left-1/2 -translate-x-1/2 z-[10000] flex items-center gap-2.5'>
+      <div className='absolute top-3 left-1/2 -translate-x-1/2 z-[10000]  flex items-center gap-2.5'>
 
         {/* BACKGROUND: Transparent toggle + free-choice color wheel */}
         <div className={pill}>
@@ -289,11 +289,11 @@ const handleSave = async () => {
       </div>
 
       
-      <div className='w-full absolute z-[9999]'>
+      <div className='w-full h-full absolute z-[9999]'>
         <ReactSketchCanvas
           ref={canvasRef}
           width="100%"
-          height="630px"
+          height="100%"
           canvasColor={canvasColor}
           strokeColor={strokeColor}
           strokeWidth={strokeWidth}
