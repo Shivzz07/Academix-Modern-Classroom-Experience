@@ -45,7 +45,7 @@ function Pricing() {
           >
             <div
               className="flex hidden md:flex hover:border-white hover:bg-purple-400 w-full h-full   duration-700 transition-all  dark:border-black  bg-gray-500   hover:drop-shadow-gray-300 group-hover:bg-blue-400 "
-                onMouseEnter={() => setDivColor("#D500FF")}
+                onMouseEnter={() => setDivColor("#9810FA")}
               onMouseLeave={() => setDivColor("#4a5565")}
             >
               <div className="flex  flex-col justify-center px-4 ">
@@ -137,7 +137,7 @@ function Pricing() {
                       to="/register"
                       style={{ backgroundColor: textColor }}
                       className={`comp text-sm flex transition-all duration-300 px-4 py-4 rounded-full  font-extralight text-white cursor-pointer  hover:text-red-400`}
-                      onMouseEnter={() => setTextColor("#ffff")}
+                      onMouseEnter={() => setTextColor("#ffffff")}
                       onMouseLeave={() => setTextColor("#FF5308")}
                       onClick={() => setaura(999)}
                     >
@@ -200,7 +200,7 @@ function Pricing() {
                     
                     className="px-4 rounded-xl py-2 text-white hover:text-[#FF5308] comp bg-[#FF5308] hover:bg-white duration-500 "
                    
-                    onClick={() => setaura(0)}
+                    onClick={() => setaura(999)}
                   >
                     999+ Aura
                   </Link>

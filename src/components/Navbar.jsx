@@ -236,13 +236,13 @@ const {aura_count} = useContext(TasksContext)
                 </button>
                 <button
                   onClick={handleThemeTransition}
-                  className="md:hidden duration-200 px-2 rounded-xl bg-white play text-white dark:bg-gray-600 cursor-pointer hover:scale-90 "
+                  className="md:hidden hover:rotate-15  duration-400 px-2 rounded-xl bg-white play text-white dark:bg-gray-600 cursor-pointer hover:scale-90 "
                 >
                   {dark ? "🌙" : "☀️"}
                 </button>
 
                 <Link
-                  className="text-[#336db5] hover:text-[#1B9FF6] hover:underline dark:text-white"
+                  className="text-[#336db5] hover:text-[#1B9FF6] hover:underline dark:text-white py-1 md:py-0"
                   to="/login"
                   onClick={() => setaura(0)}
                 >

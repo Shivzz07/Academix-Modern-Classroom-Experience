@@ -309,8 +309,15 @@ const Register = ({ setUser, setfirstName, setlastName, setuserName }) => {
                   required
                   className="border-b-2 border-white w-full h-10 bg-transparent outline-none px-2"
                 />
+               
 
                 <div className="flex flex-col justify-center items-center gap-2">
+                   <h1
+                    className=" text-gray-600 w-full flex justify-center  items-center border-b   pt-2 px-4 e text-capitalize"
+                    style={{ borderColor: auradialogbordercolor }}
+                  >
+                    Current Aura : {aura_count}
+                  </h1>
                   <button className="bg-[#207B52] px-4 py-2 text-white hover:bg-green-300 duration-500 play cursor-pointer rounded-md ">
                     {wait ? "Signup!" : "Please wait!"}
                   </button>
