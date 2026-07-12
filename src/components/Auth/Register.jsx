@@ -313,7 +313,7 @@ const Register = ({ setUser, setfirstName, setlastName, setuserName }) => {
 
                 <div className="flex flex-col justify-center items-center gap-2">
                    <h1
-                    className=" text-gray-600 w-full flex justify-center  items-center border-b   pt-2 px-4 e text-capitalize"
+                    className=" md:hidden text-gray-600 w-full flex justify-center  items-center border-b   pt-2 px-4 e text-capitalize"
                     style={{ borderColor: auradialogbordercolor }}
                   >
                     Current Aura : {aura_count}
