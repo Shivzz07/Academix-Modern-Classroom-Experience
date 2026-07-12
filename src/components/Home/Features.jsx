@@ -3,6 +3,8 @@ import aura from "../../assets/miscellaneous/aura.gif";
 import rank from "../../assets/miscellaneous/rank.gif";
 import mission from "../../assets/miscellaneous/mission.gif";
 import TextPressure from "./TextPressure";
+import TextType3 from "./TextType3";
+import TextType4 from "./TextType4";
 import mission_pov from "../../assets/miscellaneous/mission_pov.png";
 import aura_pov from "../../assets/miscellaneous/aura_pov.png";
 import leader_pov from "../../assets/miscellaneous/leader_pov.png";
@@ -18,7 +20,7 @@ function Features() {
   return (
     <div
       id="features"
-      className="back w-full flex-col justify-center gap-5 group dark:xl:mt-40 dark:mt-0 dark:md:mt-20 "
+      className="back w-full flex-col justify-center gap-5 group dark:xl:mt-40 dark:mt-0 dark:md:mt-20 pb-10 "
       onMouseLeave={() => {}}
     >
       <div className="flex justify-center ">
@@ -26,6 +28,7 @@ function Features() {
           style={{ position: "relative", height: "120px" }}
           className=" sm:mt-0 cursor-crosshair "
         >
+          <div className="hidden sm:flex">
           <TextPressure
             text="Features"
             flex={false}
@@ -38,11 +41,23 @@ function Features() {
             strokeColor="#FBCD06"
             minFontSize={100}
           />
+          </div>
+          <div>
+          
+        <div className="text-xl sm:hidden ">
+          <TextType4
+            text={["have time to look this up?", "FEATURES", "have time to look this up?", "FEATURES"]}
+            typingSpeed={25}
+            pauseDuration={5000}
+            showCursor={true}
+          />
         </div>
-        {/* <h1 className='text sm:text-[100px] text-amber-300 text-[60px] mt-5 sm:mt-0 '>~Features~</h1> */}
+          </div>
+        </div>
+   
       </div>
       <div className="flex flex-col sm:flex-row sm:justify-evenly justify-center items-center px-20 sm:gap-5 cursor-pointer">
-        <div className="first hover:border-white hover:scale-[90%]   scale-80  duration-700 transition-all pb-20 rounded-xl bg-blue-400 border-1 border-green-300 hover:drop-shadow-gray-300 group-hover:bg-blue-400">
+        <div className="first hover:border-white hover:scale-[100%] md:hover:scale-[90%]   scale-80  duration-700 transition-all pb-20 rounded-xl bg-blue-400 border-1 border-green-300 hover:drop-shadow-gray-300 group-hover:bg-blue-400">
           <img
             src={mission}
             alt=""
@@ -67,7 +82,7 @@ function Features() {
         </div>
 
         <div
-          className="bg-pink-600 hover:border-white scale-85  rounded-xl border-[0.5px] border-blue-300 hover:scale-[95%] duration-700 pb-20"
+          className="bg-pink-600 hover:border-white scale-80  rounded-xl border-[0.5px] border-blue-300 hover:scale-[100%] md:hover:scale-[90%]  duration-700 pb-20"
           onMouseEnter={() => {}}
         >
           <div>
@@ -96,7 +111,7 @@ function Features() {
         </div>
 
         <div
-          className="bg-[#E75C5F] hover:scale-[105%] scale-90 duration-700 hover:border-white pb-10 sm:pb-20 rounded-xl border-1
+          className="bg-[#E75C5F] hover:scale-[100%] md:hover:scale-[90%]  scale-80 duration-700 hover:border-white pb-20 sm:pb-20 rounded-xl border-1
         "
           onMouseEnter={() => {}}
         >

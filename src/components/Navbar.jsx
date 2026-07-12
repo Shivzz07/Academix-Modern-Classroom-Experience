@@ -191,9 +191,14 @@ const {aura_count} = useContext(TasksContext)
       <header className="w-full px-4">
         <div className="mx-auto max-w-8xl rounded-4xl dark:bg-black   dark:border-gray-600   bg-no-repeat bg-yellow-300 px-3 flex justify-between  py-4 my-2 sm:px-8 border-1 border-blue-600 ">
           <div className=" text-red-600">
-            <h1 className="text sm:block tracking-wide text-sm sm:text-xl md:text-2xl dark:text-pink-400 md:my-0 ">
+            <Link
+            to="/"
+            >
+              <h1  className="text sm:block tracking-wide py-2 md:py-0 text-sm sm:text-xl md:text-2xl dark:text-pink-400 md:my-0 ">
               Academix
             </h1>
+            </Link>
+          
           </div>
 
           {(!user || user?.login == false) && (
@@ -233,7 +238,7 @@ const {aura_count} = useContext(TasksContext)
                   onClick={handleThemeTransition}
                   className="md:hidden duration-200 px-2 rounded-xl bg-white play text-white dark:bg-gray-600 cursor-pointer hover:scale-90 "
                 >
-                  {dark ? "⏾" : "☀️"}
+                  {dark ? "🌙" : "☀️"}
                 </button>
 
                 <Link
@@ -295,7 +300,7 @@ const {aura_count} = useContext(TasksContext)
   }}
                   className="md:hidden duration-200 px-2 rounded-xl bg-white play text-white dark:bg-gray-600 cursor-pointer hover:scale-90 "
                 >
-                  {dark ? "⏾" : "☀️"}
+                  {dark ? "🌙" : "☀️"}
                 </button>
 
                 <div className=" bg-red-400  md:py-0 py-2  px-2 rounded-sm flex flex-row ">
@@ -376,7 +381,7 @@ const {aura_count} = useContext(TasksContext)
   }}
                   className="md:hidden duration-200 px-2 rounded-xl bg-white play text-white dark:bg-gray-600 cursor-pointer hover:scale-90 "
                 >
-                  {dark ? "⏾" : "☀️"}
+                  {dark ? "🌙" : "☀️"}
                 </button>
 
                 <Link

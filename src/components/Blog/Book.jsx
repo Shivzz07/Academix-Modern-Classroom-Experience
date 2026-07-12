@@ -43,7 +43,7 @@ const Book = () => {
                         mistakes
                       </h1>
                     </div>
-                    <h1 className="float relative z-999 left-32  rain  text-2xl px-2 text-white bg-[#00BCC8] bottom-1">
+                    <h1 className="float relative z-999 left-32  rain  text-2xl px-2 text-[#FFF085] bg-[#00BCC8] bottom-1">
                       I did while
                     </h1>
 

@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, createElement, useMemo, useCallback } from 'react';
 import { gsap } from 'gsap';
+import React from 'react';
 
 const TextType2 = ({
   text,
@@ -11,13 +12,13 @@ const TextType2 = ({
   pauseDuration = 2000,
   deletingSpeed = 10,
   loop = true,
-  className = 'rob',
+  className = 'rob ',
   showCursor = true,
   hideCursorWhileTyping = false,
   cursorCharacter = '.',
   cursorClassName = '',
   cursorBlinkDuration = 0.5,
-  textColors = ['#7AEEAA','#ffd503ff'],
+  textColors = ['#65717eff'],
   variableSpeed,
   onSentenceComplete,
   startOnVisible = false,

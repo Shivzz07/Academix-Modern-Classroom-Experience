@@ -2,22 +2,23 @@
 
 import { useEffect, useRef, useState, createElement, useMemo, useCallback } from 'react';
 import { gsap } from 'gsap';
+import React from 'react';
 
 const TextType2 = ({
   text,
   as: Component = 'div',
   typingSpeed = 50,
   initialDelay = 0,
-  pauseDuration = 2000,
+  pauseDuration = 1000,
   deletingSpeed = 10,
   loop = true,
-  className = 'rob',
+  className = 'rob text-2xl',
   showCursor = true,
   hideCursorWhileTyping = false,
   cursorCharacter = '.',
   cursorClassName = '',
   cursorBlinkDuration = 0.5,
-  textColors = ['#7AEEAA','#ffd503ff'],
+  textColors = ['#05DF72',"#E60076","#FCCD05","#E75C5F"],
   variableSpeed,
   onSentenceComplete,
   startOnVisible = false,
